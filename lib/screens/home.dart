@@ -12,24 +12,27 @@ class HomePage extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: CombinedScreen(),
-    );  
+    );
   }
 }
 
-class CombinedScreen extends StatelessWidget { 
- void onScoringScreen(BuildContext context, String path) {
-  switch (path) {
-    case "mongol":
-      Navigator.push(context,MaterialPageRoute(builder: (context) => DrawingScreen()));
-      break;
-    case  "nihongo":
-      Navigator.push(context,MaterialPageRoute(builder: ((context) => DrawingScreen()))); 
-      break;
+class CombinedScreen extends StatelessWidget {
+  void onScoringScreen(BuildContext context, String path) {
+    switch (path) {
+      case "mongol":
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => DrawingScreen()));
+        break;
+      case "nihongo":
+        Navigator.push(context,
+            MaterialPageRoute(builder: ((context) => DrawingScreen())));
+        break;
       case "check":
-      Navigator.push(context,MaterialPageRoute(builder: ((context) => ScorePage())));
-      break;
-    default:
-  }
+        Navigator.push(
+            context, MaterialPageRoute(builder: ((context) => ScorePage())));
+        break;
+      default:
+    }
   }
 
   @override
@@ -41,29 +44,29 @@ class CombinedScreen extends StatelessWidget {
           children: <Widget>[
             const SizedBox(height: 25),
             ElevatedButton(
-              onPressed: () {  
+              onPressed: () {
                 onScoringScreen(context, "mongol");
               },
               child: const Text('Монгол'),
             ),
             const SizedBox(height: 25),
             ElevatedButton(
-              onPressed: () {  
+              onPressed: () {
                 onScoringScreen(context, "nihongo");
               },
               child: Text('日本語'),
             ),
             const SizedBox(height: 25),
             ElevatedButton(
-              onPressed: () {  
+              onPressed: () {
                 onScoringScreen(context, "check");
               },
               child: Text('CHECK'),
             ),
-                SizedBox(height: 25),
+            SizedBox(height: 25),
             ElevatedButton(
-              onPressed: () {  
-                onScoringScreen(context,"garah");
+              onPressed: () {
+                onScoringScreen(context, "garah");
               },
               child: Text('QUIT'),
             ),
